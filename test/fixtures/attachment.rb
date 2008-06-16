@@ -146,3 +146,14 @@ begin
 rescue
   puts "S3 error: #{$!}"
 end
+
+begin
+  class ImanipAttachment < ActiveRecord::Base
+    has_attachment :path_prefix => 'vendor/plugins/attachment_fu/test/files',
+      :processor => :Imanip, :thumbnails => { :thumb => [50, 50], :small => '101x100' }, :resize_to => 55
+  end
+rescue MissingSourceFile
+  puts $!.message
+  puts "no Imanip"
+end
+

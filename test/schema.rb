@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.column :type,            :string
   end
 
-  create_table :mini_magick_attachments, :force => true do |t|
+  create_table :imanip_attachments, :force => true do |t|
     t.column :parent_id,       :integer
     t.column :thumbnail,       :string 
     t.column :filename,        :string, :limit => 255
