@@ -57,7 +57,7 @@ module Technoweenie # :nodoc:
           end
           new_path = empty_temp_path
           img.crop_resized(new_path, dimensions)
-          self.temp_path = new_path
+          temp_path.unshift new_path
         end
       end
     end
